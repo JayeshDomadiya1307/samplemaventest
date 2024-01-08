@@ -23,8 +23,13 @@ public class RelativeLocatorClass {
 		createNewAccount.click();
 		BrowserLaunch.waitForSeconds(3);
 		
-		
+		WebElement maleElement = driver.findElement(By.xpath("//label[text()='Male']"));
+		WebElement female = driver.findElement(with(By.tagName("input")).toLeftOf(maleElement));
+		female.click();
+		BrowserLaunch.waitForSeconds(3);
 
+		WebElement custom = driver.findElement(with(By.tagName("input")).toRightOf(maleElement));
+		custom.click();
 	}
 
 }
